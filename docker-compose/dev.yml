@@ -4,13 +4,7 @@ services:
     container_name: atomic-core
     build: ..
     restart: always
-    links:
-      - ganache
-    depends_on:
-      - ganache
+    expose:
+      - 8545
     environment:
-      - ETH_NODE_WS=ws://ganache:8545/ws;
-
-  ganache:
-      image: trufflesuite/ganache-cli
-      container_name: ganache
+      - ETH_NODE_WS=ws://172.17.0.1:8545/ws;
