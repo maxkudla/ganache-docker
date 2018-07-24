@@ -2,7 +2,7 @@ version: "3"
 services:
   atomic-core:
     container_name: atomic-core
-    build: ..
+    image: dockercompose_atomic-core:latest
     restart: always
     expose:
       - 8545
